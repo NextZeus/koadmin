@@ -1,0 +1,17 @@
+{
+  "apps":[
+      {
+        "name": "server-monster2-pixi-admin",
+        "script": "bin/www",
+        "instances": 1,
+        "exec_mode": "fork",
+        "log_date_format": "YYYY-MM-DD HH:mm:ss",
+        "combine_logs": false,
+        "env": {
+          "PORT": 6500,
+          "NODE_ENV": "dev",
+          "TZ": "Asia/Shanghai"
+        }
+      }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+    "mongodb":{
+        "uri":  "mongodb://localhost/hellokoa2",
+        "options":{
+            "useMongoClient":true
+        }
+    },
+    "redis":{
+        "Cluster":[],
+        "Single":{
+            "host": "127.0.0.1",
+            "port": 6379
+        }
+    }
+}
