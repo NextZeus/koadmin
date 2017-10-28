@@ -6,10 +6,16 @@ const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 const render = require('koa-ejs');
+const static = require('koa-static');
+var cors = require('koa2-cors');
 const path = require('path');
+let session = require('koa-session2');
 
-const index = require('./routes/index')
-const users = require('./routes/users')
+
+
+// init mongoose and redis
+let mongo = require('./component/mongodb.js');
+let redis = require('./component/redis.js');
 
 // error handler
 onerror(app)
@@ -20,12 +26,26 @@ app.use(bodyparser({
 }))
 app.use(json());
 app.use(logger());
-app.use(require('koa-static')(__dirname + '/public'));
-app.use(require('koa-static')(__dirname + '/templates'));
+
+app.use(static(__dirname + '/templates'));
 
 app.use(views(__dirname + '/views', {
-  extension: 'ejs'
+  extension: 'ejs',
+  cache:  false
 }));
+
+// Access Control
+app.use(cors({
+  origin: '*',
+  credentials: true,
+  allowMethods: ['GET', 'POST', 'OPTIONS'],
+  allowHeaders: ['Content-Type', 'Authorization', 'Accept','X-Requested-With'],
+}));
+
+// let RedisStore = require('./component/redisStore');
+// app.use(session({
+//   store:  new RedisStore()
+// }));
 
 // logger
 app.use(async (ctx, next) => {
@@ -33,15 +53,11 @@ app.use(async (ctx, next) => {
   await next()
   const ms = new Date() - start
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
-})
+});
 
 // routes
-app.use(index.routes(), index.allowedMethods())
-app.use(users.routes(), users.allowedMethods())
-
-// init mongoose and redis
-let mongo = require('./component/mongo.js');
-let redis = require('./component/redis.js');
+let monster2 = require('./controller/monster2/router');
+app.use(monster2.routes(), monster2.allowedMethods());
 
 /**
  * uncaughtException error handler

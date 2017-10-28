@@ -1,7 +1,7 @@
 {
   "apps":[
       {
-        "name": "server-monster2-pixi-admin",
+        "name": "server-up-roomgame-admin",
         "script": "bin/www",
         "instances": 1,
         "exec_mode": "fork",

@@ -1,0 +1,101 @@
+<!-- profile message -->
+<div id="playerProfile" class="">
+    <div class="page-title">
+        <div class="title_left">
+            <h3>User Profile</h3>
+        </div>
+
+        <div class="title_right">
+            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="clearfix"></div>
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>User Report <small>Activity report</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Settings 1</a>
+                        </li>
+                        <li><a href="#">Settings 2</a>
+                        </li>
+                        </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+                        <div class="profile_img">
+                            <div id="crop-avatar">
+                                <!-- Current avatar -->
+                                <img id="avatar" class="img-responsive avatar-view" src="production/images/picture.jpg" alt="Avatar" title="Change the avatar">
+                            </div>
+                        </div>
+                        <h3 id="username"></h3>
+                            
+                        <ul class="list-unstyled user_data">
+                            <!-- <li><i class="fa fa-map-marker user-profile-icon"></i> San Francisco, California, USA</li> -->
+                            <!-- <li><i class="fa fa-briefcase user-profile-icon"></i> Software Engineer</li> -->
+                        </ul>
+
+                        <br />
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <div class="profile_title">
+                            <div class="col-md-6">
+                                <h2>Field </h2>
+                                <p>upliveCode: </p>
+                                <p>userToken: </p>
+                                <p>bill: </p>
+                                <p>countryCode: </p>
+                                <p>diamond: </p>
+                                <p>expValue: </p>
+                                <p>gender: </p>
+                                <p>grade: </p>
+                                <p>source: </p>
+                                <p>status: </p>
+                                <p>loginTime: </p>
+                            </div>
+                            <div class="col-md-6">
+                                <h2>Value </h2>
+                                <p ><%= user.upliveCode %></p>
+                                <p ><%= user.userToken %></p>
+                                <p ><%= user.bill %></p>
+                                <p ><%= user.countryCode %></p>
+                                <p ><%= user.diamond %></p>
+                                <p ><%= user.expValue %></p>
+                                <p ><%= user.gender %></p>
+                                <p ><%= user.grade %></p>
+                                <p ><%= user.source %></p>
+                                <p ><%= user.status %></p>
+                                <p ><%= user.loginTime %></p>
+                            </div>
+                        </div>
+                        <!-- start of user-activity-graph -->
+                        <div id="graph_bar" style="width:100%; height:280px;"></div>
+                        <!-- end of user-activity-graph -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- profile message end-->

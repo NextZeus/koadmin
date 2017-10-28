@@ -1,9 +1,9 @@
 {
-    "mongodb":{
-        "uri":  "mongodb://localhost/hellokoa2",
-        "options":{
-            "useMongoClient":true
-        }
+    "mongo": {
+        "connection_string_lobby": "mongodb://localhost/monster2_pixi_demo",
+        "connection_opts_lobby": {"config": { "autoIndex": false }},
+        "connection_string_stats": "mongodb://localhost/monster2_pixi_demo_stats",
+        "connection_opts_stats": {"config": { "autoIndex": false }}
     },
     "redis":{
         "Cluster":[],
