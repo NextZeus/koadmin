@@ -1,5 +1,7 @@
 ## Storages.localStorage
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/NextZeus/koadmin.svg)](https://greenkeeper.io/)
+
 ```
 //header.ejs 
 <script src="vendors/js-storage/js.storage.min.js"></script>
